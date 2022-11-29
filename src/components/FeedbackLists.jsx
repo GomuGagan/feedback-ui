@@ -1,3 +1,4 @@
+import { motion, AnimatePresence} from "framer-motion"
 import React from 'react'
 import Feedbackitem from './FeedbackItem'
 
@@ -8,12 +9,23 @@ function FeedbackLists({feedback, handleDelete}) {
     }
   return (
     <div className='feedback-list'>
+      <AnimatePresence >
       { feedback.map((item)=>(
-            <Feedbackitem 
-            key={item.id} 
-            item={item}
-            handleDelete = {handleDelete} />
+        <motion.div
+         key={item.id}
+         initial={{opacity: 0}}
+         animate={{opacity: 1}}
+         exit ={{opacity: 0}}
+         >
+          <Feedbackitem 
+          key={item.id} 
+          item={item}
+          handleDelete = {handleDelete} />
+
+        </motion.div>
         ))}
+        
+      </AnimatePresence>
     </div> 
   )
 }

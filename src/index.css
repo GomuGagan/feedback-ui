@@ -153,6 +153,9 @@ input:focus {
   width: 100px;
   height: 40px;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn-primary {
@@ -171,7 +174,7 @@ input:focus {
 .btn:disabled {
   background-color: #cccccc;
   color: #333;
-  cursor: auto;
+  cursor: none;
 }
 
 .btn:disabled:hover {
